@@ -23,7 +23,7 @@ export default function Register() {
         toast.error(data.error)
       } else {
         setData({})
-        toast.success('Login Successful. Welcome!')
+        toast.success('Registration Successful. Welcome!')
         navigate('/login')
       }
     } catch (error) {
@@ -35,10 +35,10 @@ export default function Register() {
     <div>
       <form onSubmit={registerUser}>
         <label>First Name</label>
-        <input type='text' placeholder='enter first name..' value={data.firstname} onChange={(e) => setData({...data, firstnamename: e.target.value})} />
+        <input type='text' placeholder='enter first name..' value={data.firstname} onChange={(e) => setData({...data, firstname: e.target.value})} />
 
         <label>Last Name</label>
-        <input type='text' placeholder='enter last name..' value={data.lastname} onChange={(e) => setData({...data, lastnamename: e.target.value})}/>
+        <input type='text' placeholder='enter last name..' value={data.lastname} onChange={(e) => setData({...data, lastname: e.target.value})}/>
 
         <label>Email</label>
         <input type='email' placeholder='enter email..' value={data.email} onChange={(e) => setData({...data, email: e.target.value})}/>
