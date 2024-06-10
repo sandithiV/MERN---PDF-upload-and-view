@@ -6,7 +6,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1>Dashboard</h1>
-      {!!user && (<h2>Hi {user.name}!</h2>)}
+      {!!user && <h1>Hi {user.firstname}!</h1>}
     </div>
-  );
+  )
 }
