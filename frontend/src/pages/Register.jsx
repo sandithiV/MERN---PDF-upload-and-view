@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
+import './Register.css';
 
 export default function Register() {
     const navigate = useNavigate()
@@ -32,22 +33,49 @@ export default function Register() {
  } 
 
   return (
-    <div>
-      <form onSubmit={registerUser}>
-        <label>First Name</label>
-        <input type='text' placeholder='enter first name..' value={data.firstname} onChange={(e) => setData({...data, firstname: e.target.value})} />
+    <div className="register-container">
+            <div className="register-card">
+                <form onSubmit={registerUser}>
+                    <h2>Register</h2>
+                    <label>First Name</label>
+                    <input 
+                        type='text' 
+                        placeholder='Enter first name...' 
+                        value={data.firstname} 
+                        onChange={(e) => setData({ ...data, firstname: e.target.value })} 
+                        required 
+                    />
 
-        <label>Last Name</label>
-        <input type='text' placeholder='enter last name..' value={data.lastname} onChange={(e) => setData({...data, lastname: e.target.value})}/>
+                    <label>Last Name</label>
+                    <input 
+                        type='text' 
+                        placeholder='Enter last name...' 
+                        value={data.lastname} 
+                        onChange={(e) => setData({ ...data, lastname: e.target.value })} 
+                        required 
+                    />
 
-        <label>Email</label>
-        <input type='email' placeholder='enter email..' value={data.email} onChange={(e) => setData({...data, email: e.target.value})}/>
+                    <label>Email</label>
+                    <input 
+                        type='email' 
+                        placeholder='Enter email...' 
+                        value={data.email} 
+                        onChange={(e) => setData({ ...data, email: e.target.value })} 
+                        required 
+                    />
 
-        <label>Password</label>
-        <input type='password' placeholder='enter password..' value={data.password} onChange={(e) => setData({...data, password: e.target.value})}/>
+                    <label>Password</label>
+                    <input 
+                        type='password' 
+                        placeholder='Enter password...' 
+                        value={data.password} 
+                        onChange={(e) => setData({ ...data, password: e.target.value })} 
+                        required 
+                    />
 
-        <button type='submit'>Submit</button>
-      </form>
-    </div>
+                    <button type='submit'>Submit</button>
+                </form>
+            </div>
+        </div>
   );
 }
