@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ECF0F1;
+    color: #2C3E50;
+  }
+  
+  .home-container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero-section {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-section h1 {
+    margin: 0;
+    font-size: 3rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+  
+  .content-section, .features-section {
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+  }
+  
+  .content-section h2, .features-section h2 {
+    margin-top: 0;
+  }
+  
+  .features-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .features-section li {
+    background-color: #3498DB;
+    color: #FFFFFF;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+  }
+  
