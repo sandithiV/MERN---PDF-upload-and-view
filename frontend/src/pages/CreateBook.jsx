@@ -1,10 +1,10 @@
 import { useState } from "react";
-//import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./CreateBook.css";
 import axios from 'axios';
 
 export default function CreateBook() {
-    //const history = useHistory();
+    const navigate = useNavigate();
 
     // State variables for form inputs
     const [bookName, setBookName] = useState("");
@@ -34,8 +34,8 @@ export default function CreateBook() {
                 },
             });
     
-            console.log('Book created:', response.data);
-            // Reset form fields or perform any other actions after successful book creation
+            console.log('Book created successfully:', response.data);
+            navigate("/dashboard");
         } catch (error) {
             console.error('Error creating book:', error);
             // Handle error
