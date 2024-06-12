@@ -14,4 +14,7 @@ router.post(
   bookController.createBook
 );
 
+// Route for fetching all books
+router.get('/books', bookController.getAllBooks);
+
 module.exports = router;

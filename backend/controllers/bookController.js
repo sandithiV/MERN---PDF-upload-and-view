@@ -24,6 +24,18 @@ const createBook = async (req, res) => {
   }
 };
 
+// Fetch all books
+const getAllBooks = async (req, res) => {
+  try {
+    const books = await Book.find();
+    res.json(books);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+
 module.exports = {
   createBook,
+  getAllBooks,
 };
