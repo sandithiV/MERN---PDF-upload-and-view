@@ -1,6 +1,7 @@
 import { useState } from "react";
 //import { useHistory } from "react-router-dom";
 import "./CreateBook.css";
+import axios from 'axios';
 
 export default function CreateBook() {
     //const history = useHistory();
@@ -13,14 +14,34 @@ export default function CreateBook() {
     const [imageFile, setImageFile] = useState(null);
     const [bookFile, setBookFile] = useState(null);
 
-    // Function to handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Implement book creation logic here
-        console.log("Book details:", { bookName, authorName, language, category, imageFile, bookFile });
-        // Redirect to dashboard or any other page after book creation
-        //history.push("/dashboard");
+    
+        // Create a FormData object to store the form data and files
+        const formData = new FormData();
+        formData.append('bookName', bookName);
+        formData.append('authorName', authorName);
+        formData.append('language', language);
+        formData.append('category', category);
+        formData.append('image', imageFile);
+        formData.append('bookFile', bookFile);
+    
+        try {
+            // Send the form data to the backend
+            const response = await axios.post('/api/books', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+    
+            console.log('Book created:', response.data);
+            // Reset form fields or perform any other actions after successful book creation
+        } catch (error) {
+            console.error('Error creating book:', error);
+            // Handle error
+        }
     };
+        
 
     return (
         <div className="create-book-container">
