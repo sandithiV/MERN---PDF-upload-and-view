@@ -1,13 +1,16 @@
 .dashboard-container {
-    background-color: #ECF0F1;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
 }
 
-.dashboard-header {
+.header-container {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    padding: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    margin-bottom: 2rem;
 }
 
 .user-info {
@@ -19,112 +22,110 @@
     margin-right: 1rem;
 }
 
-.scroll-down {
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.actions ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.actions ul li {
-    margin-right: 1rem;
-}
-
-.content-container {
-    background-color: #FFFFFF;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.profile-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.profile-info img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 1rem;
-}
-
-.profile-text h2 {
-    margin: 0;
-}
-
-.section-title {
-    margin-bottom: 1.5rem;
-}
-
-.book-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.book-card {
-    background-color: #FFFFFF;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.book-card img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.upload-link {
-    margin-top: 2rem;
-}
-
-.upload-link a {
-    background-color: #3498DB;
-    color: #FFFFFF;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
 .dropdown-toggle {
-    background: none;
+    background-color: transparent;
     border: none;
+    color: #000000;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 
 .dropdown-content {
-    display: none;
     position: absolute;
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    top: 100%;
+    right: 0;
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(188, 184, 184, 0.2);
     z-index: 1;
+    padding: 0.5rem 0;
 }
 
 .dropdown-content ul {
-    list-style: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.dropdown-content ul li {
-    padding: 10px;
+.dropdown-content li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.dropdown-content li:hover {
+    background-color: #F2F2F2;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.profile-container {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.profile-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.profile-text h2 {
+    margin-top: 0;
+}
+
+.books-container {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-grow: 1;
+}
+
+.section-title {
+    margin-top: 0;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.book-card {
+    background-color: #F2F2F2;
+    padding: 1rem;
+    border-radius: 5px;
     text-align: center;
 }
 
-.dropdown-toggle:focus + .dropdown-content {
-    display: block;
+.book-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.upload-link {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.upload-link a {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
 }

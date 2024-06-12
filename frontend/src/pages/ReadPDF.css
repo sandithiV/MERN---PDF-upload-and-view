@@ -1,0 +1,13 @@
+.pdf-viewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+  }
+  
+  .pdf-iframe {
+    width: 130%;
+    height: 90vh;
+    object-fit: contain; 
+    border: none;
+  }

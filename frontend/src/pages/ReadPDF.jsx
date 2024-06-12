@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import './ReadPDF.css'; // Import the CSS file
 
 const ReadPDF = () => {
     const { bookId } = useParams();
@@ -22,11 +23,11 @@ const ReadPDF = () => {
     }, [bookId]);
   
     return (
-        <div>
+        <div className="pdf-viewer">
           {pdfData ? (
             <iframe
               src={URL.createObjectURL(pdfData)}
-              style={{ width: '100%', height: '100vh' }}
+              className="pdf-iframe"
               title="PDF Viewer"
             />
           ) : (
@@ -35,6 +36,5 @@ const ReadPDF = () => {
         </div>
       );
     };
-  
   
   export default ReadPDF;

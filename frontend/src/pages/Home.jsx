@@ -3,10 +3,11 @@ import './Home.css'; // Import the CSS file for styling
 
 export default function Home() {
   return (
+    <div className="home-body">
     <div className="home-container">
       <header className="hero-section">
-        <h1>Welcome to the Online Library</h1>
-        <p>Your gateway to a world of knowledge.</p>
+        <h1>Welcome to the BookNook </h1>
+        <p>Your gateway to a world of knowledge</p>
       </header>
       <section className="content-section">
         <h2>About Us</h2>
@@ -26,6 +27,7 @@ export default function Home() {
           <li>Accessible Anywhere, Anytime</li>
         </ul>
       </section>
+    </div>
     </div>
   );
 }

@@ -31,6 +31,7 @@ export default function Login() {
     }
   }
   return (
+    <div className="login-body">
     <div className="login-container">
       <div className="login-card">
         <form onSubmit={loginUser}>
@@ -55,5 +56,6 @@ export default function Login() {
         </form>
       </div>
     </div>
+    </div> 
   );
 }
