@@ -69,7 +69,7 @@ export default function Dashboard() {
             </div>
             <div className="content-wrapper">
                 <div className="profile-container">
-                    <img src="../assets/pngtree-girl-reading-a-book-in-hand-image_1138567.jpg" alt="Profile" />
+                    <img src="https://img.lovepik.com/free-png/20211202/lovepik-learning-girl-reading-a-book-png-image_401258213_wh1200.png" alt="Profile" />
                     <div className="profile-text">
                         <h2>This is your user dashboard!</h2>
                         <p>Reading is a passion</p>
