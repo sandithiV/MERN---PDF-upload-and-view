@@ -18,5 +18,6 @@ How to run the application :-
     * Then you can see a form to upload book. Fill it correctly and you can successfully upload a book.
     * When you navigate to the dashboard page you can see the uploaded book's details
     * Click on "Read PDF", you can view the pdf and read the book
+    * You can see a dropdown list in user dashboard and by toggle it you can see 'logout' button.click on this and you can logout successfully 
 
     
