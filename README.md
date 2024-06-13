@@ -6,7 +6,7 @@ How to run the application :-
    * Run backend with "npm start" command
    * Run frontend with "npm run dev" command
    * Then click on following link which displays in frontend terminal to view;
-         Local:   http://localhost:5173/
+        localhost:5173
 
     * You will navigate to the Home page
     * Register to the BookNook by clicking 'Register' locate on the navigation bar 
