@@ -1,14 +1,15 @@
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../context/userContext";
 import { FaAngleDown, FaAngleUp, FaFilePdf } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./Dashboard.css";
 
 export default function Dashboard() {
-    const { user } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
     const [showDropdown, setShowDropdown] = useState(false);
     const [books, setBooks] = useState([]);
+    const navigate = useNavigate();
 
     const fetchBooks = async () => {
         try {
@@ -25,6 +26,21 @@ export default function Dashboard() {
 
     const handleToggleDropdown = () => {
         setShowDropdown(!showDropdown);
+    };
+
+    const handleLogout = async () => {
+        try {
+            // Remove the JWT token from the browser's cookies
+            await axios.get("/api/logout", { withCredentials: true });
+
+            // Remove user data from the context or state
+            setUser(null);
+
+            // Navigate to the home page
+            navigate("/");
+        } catch (error) {
+            console.error("Error during logout:", error);
+        }
     };
 
     return (
@@ -44,8 +60,7 @@ export default function Dashboard() {
                             <div className="dropdown-content">
                                 <ul>
                                     <li>Update Profile</li>
-                                    <li>Logout</li>
-                                    {/* Add additional action items as needed */}
+                                    <li onClick={handleLogout}>Logout</li>
                                 </ul>
                             </div>
                         )}

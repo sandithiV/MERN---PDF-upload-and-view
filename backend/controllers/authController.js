@@ -98,9 +98,14 @@ if(token) {
 }
 }
 
+const logout = (req, res) => {
+    res.clearCookie("token").json({ message: "Logged out successfully" });
+  };
+
 module.exports = {
     test,
     registerUser,
     loginUser,
-    getProfile
+    getProfile,
+    logout,
 }
